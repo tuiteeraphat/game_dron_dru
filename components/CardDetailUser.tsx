@@ -11,7 +11,7 @@ export default function CardDetailUser() {
 
       <div className="w-[400px] h-44 px-5 flex flex-col justify-center bg-gray-500/50 backdrop-blur-2xl rounded-b-2xl shadow mb-5 text-white">
         <div className="flex justify-between">
-          <span className="my-2">รหัสประจำตัว</span>
+          <span className="my-2">ไอดีผู้เล่น</span>
           <span className="my-2">OPEN8415</span>
         </div>
         <div className="flex justify-between">
