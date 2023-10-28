@@ -20,13 +20,7 @@ export default function Register() {
           <TextFieldInput type="text" placeholder="รหัสประจำตัว* ตย.OPEN8415" />
           <TextFieldInput type="text" placeholder="รหัสผ่าน*" />
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-          >
+          <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
             <Button text="เริ่มเกม" />
           </motion.div>
         </div>
