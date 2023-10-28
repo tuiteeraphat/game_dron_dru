@@ -17,6 +17,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/gameComponents/Landscape.jsx", "components/gameComponents/GuiSetting.tsx"],
   "exclude": ["node_modules"]
 }

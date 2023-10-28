@@ -8,10 +8,12 @@ import {
 } from "@react-three/drei";
 import SphereEnv from "@/components/gameComponents/SphereEnv";
 import Landscape from "@/components/gameComponents/Landscape";
+import GuiSetting from "@/components/gameComponents/GuiSetting";
 export default function Home() {
   return (
     <main className="w-screen h-screen relative flex flex-col items-center justify-between">
       {/* show player detail */}
+      <GuiSetting />
       <CardDetailUser />
 
       {/* main render game this */}

@@ -4,6 +4,7 @@ import { Color, MeshStandardMaterial } from "three";
 
 export default function Landscape(props) {
   const { nodes, materials } = useGLTF("models/scene.glb");
+
   return (
     <group {...props} dispose={null}>
       <mesh
