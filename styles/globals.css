@@ -23,7 +23,7 @@ img {
 
 body {
   font-family: "IBM Plex Sans Thai", sans-serif;
-  color: rgb(var(--foreground-rgb));
+  color: #3d3a29;
   background: linear-gradient(
       to bottom,
       transparent,

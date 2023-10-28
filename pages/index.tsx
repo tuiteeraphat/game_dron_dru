@@ -1,10 +1,32 @@
 export default function Home() {
   return (
-    <main className="relative flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="absolute top-5 right-5">
-        <div className="w-96 h-64 bg-white/50 backdrop-blur-2xl rounded-2xl shadow mb-10"></div>
-        <div className="w-96 h-64 bg-white/50 backdrop-blur-2xl rounded-2xl shadow"></div>
+    <main className="w-screen h-screen relative flex flex-col items-center justify-between">
+      <div className="top-5 right-5 fixed">
+        <div className="w-[500px] h-64 p-5 flex flex-col justify-center bg-gray-500/30 backdrop-blur-2xl rounded-2xl shadow mb-5 text-white">
+          <div className="flex justify-between">
+            <span className="text-xl my-2">รหัสประจำตัว</span>
+            <span className="text-xl my-2">OPEN8415</span>
+          </div>
+          <div className="flex justify-between">
+            <span className="text-xl my-2">ชื่อผู้เล่น</span>
+            <span className="text-xl my-2">มิโน ทดสอบ</span>
+          </div>
+          <div className="flex justify-between">
+            <span className="text-xl my-2">ชื่อโรงเรียน</span>
+            <span className="text-xl my-2">
+              โรงเรียนหลวงพ่อปานคลองด่านอนุสรณ์
+            </span>
+          </div>
+          <div className="flex justify-between">
+            <span className="text-xl my-2">คะแนน</span>
+            <span className="text-xl my-2">5,200</span>
+          </div>
+        </div>
+
+        {/* <div className="w-[500px] h-64 bg-white/20 backdrop-blur-2xl rounded-2xl shadow"></div> */}
       </div>
+
+      {/* <img src="/images/background.jpg" /> */}
     </main>
   );
 }
