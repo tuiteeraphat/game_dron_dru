@@ -65,7 +65,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="bg-gradient-to-br from-[#3d30a2a4] to-[#89216ba4] w-[400px] backdrop-blur-2xl py-5 rounded-t-2xl flex flex-col items-center justify-center">
+        {/* <div className="bg-gradient-to-br from-[#3d30a2a4] to-[#89216ba4] w-[400px] backdrop-blur-2xl py-5 rounded-t-2xl flex flex-col items-center justify-center">
           <span className="text-white">สถิติการเล่นสูงสุด</span>
         </div>
         <div className="w-[400px] bg-gray-500/30 backdrop-blur-2xl rounded-b-2xl shadow p-5 text-white">
@@ -75,7 +75,7 @@ export default function Home() {
             <span>โรงเรียนหลวงพ่อปานคลองด่านอนุสรณ์</span>
             <span>5,200</span>
           </div>
-        </div>
+        </div> */}
       </div>
 
       <canvas ref={renderRef}></canvas>
