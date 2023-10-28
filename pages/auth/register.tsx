@@ -7,7 +7,7 @@ export default function Register() {
       className={`flex min-h-screen flex-col items-center justify-between p-24 bg-drone`}
     >
       <div className="flex">
-        <div className="w-[500px] flex flex-col items-center justify-center bg-gray-500/30 backdrop-blur-2xl rounded-l-3xl">
+        <div className="w-[500px] flex flex-col items-center justify-center bg-white/30 border backdrop-blur-2xl rounded-l-3xl">
           <img
             src="/images/u_logo-removebg-preview.png"
             alt="dru_logo"

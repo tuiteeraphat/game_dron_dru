@@ -32,11 +32,11 @@ body {
     rgb(var(--background-start-rgb));
 }
 
-.bg-drone {
+/* .bg-drone {
   background-image: url("/images/background.jpg");
   background-position: center;
   background-size: cover;
-}
+} */
 
 @tailwind base;
 @tailwind components;
