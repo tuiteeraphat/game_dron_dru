@@ -1,5 +1,6 @@
 import Button from "@/components/Button";
 import TextFieldInput from "@/components/TextFieldInput";
+import { motion } from "framer-motion";
 
 export default function Register() {
   return (
@@ -18,7 +19,16 @@ export default function Register() {
         <div className="bg-white/30 py-10 backdrop-blur-2xl shadow-md flex flex-col w-[500px] rounded-r-3xl items-center">
           <TextFieldInput type="text" placeholder="รหัสประจำตัว* ตย.OPEN8415" />
           <TextFieldInput type="text" placeholder="รหัสผ่าน*" />
-          <Button text="เริ่มเกม" />
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            <Button text="เริ่มเกม" />
+          </motion.div>
         </div>
       </div>
     </main>

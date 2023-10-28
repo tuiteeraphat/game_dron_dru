@@ -1,5 +1,6 @@
 import Button from "@/components/Button";
 import TextFieldInput from "@/components/TextFieldInput";
+import { motion } from "framer-motion";
 
 export default function Register() {
   return (
@@ -24,7 +25,9 @@ export default function Register() {
           {/* <TextFieldInput type="text" placeholder="รหัสประจำตัว*" /> */}
           <TextFieldInput type="text" placeholder="รหัสผ่าน*" />
           <TextFieldInput type="text" placeholder="ยืนยันรหัสผ่านอีกครั้ง*" />
-          <Button text="สมัครสมาชิก" />
+          <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+            <Button text="สมัครสมาชิก" />
+          </motion.div>
         </div>
       </div>
     </main>
