@@ -9,7 +9,7 @@ export default function Register() {
       <div className="flex">
         <div className="w-[500px] flex flex-col items-center justify-center bg-gray-500 backdrop-blur-2xl rounded-l-3xl">
           <img
-            src="/images/u_logo-removebg-preview.png"
+            src="/images/u_logo.png"
             alt="dru_logo"
             className="w-fit h-fit"
           />
