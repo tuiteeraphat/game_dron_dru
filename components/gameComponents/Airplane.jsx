@@ -14,8 +14,8 @@ const delayedQuaternion = new Quaternion();
 
 export function Airplane(props) {
   const { nodes, materials } = useGLTF("models/airplane.glb");
+  console.log(nodes);
   const groupRef = useRef();
-  const helixMeshRef = useRef();
 
   useFrame(({ camera }) => {
     updatePlaneAxis(x, y, z, planePosition, camera);
@@ -64,27 +64,20 @@ export function Airplane(props) {
     camera.matrixAutoUpdate = false;
     camera.matrix.copy(cameraMatrix);
     camera.matrixWorldNeedsUpdate = true;
-
-    // helixMeshRef.current.rotation.z -= 1.0;
   });
 
   return (
     <>
       <group ref={groupRef}>
         <group {...props} dispose={null} scale={0.01} rotation-y={Math.PI}>
-          {/* <mesh
+          <mesh
             geometry={nodes.supports.geometry}
             material={materials["Material.004"]}
-          /> */}
+          />
           <mesh
             geometry={nodes.chassis.geometry}
             material={materials["Material.005"]}
           />
-          {/* <mesh
-            geometry={nodes.helix.geometry}
-            material={materials["Material.005"]}
-            ref={helixMeshRef}
-          /> */}
         </group>
       </group>
     </>
