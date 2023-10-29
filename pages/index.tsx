@@ -1,12 +1,6 @@
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
-import {
-  EffectComposer,
-  HueSaturation,
-  SMAA,
-  Glitch,
-} from "@react-three/postprocessing";
-import { BlendFunction } from "postprocessing";
+import { EffectComposer, SMAA } from "@react-three/postprocessing";
 import CardDetailUser from "@/components/CardDetailUser";
 import {
   PerspectiveCamera,
@@ -95,13 +89,7 @@ export default function Home() {
           </EffectComposer>
 
           <EffectComposer>
-            {/* <Glitch /> */}
             <MotionBlur />
-            {/* <HueSaturation
-              blendFunction={BlendFunction.NORMAL}
-              hue={-0.15}
-              saturation={0.1}
-            /> */}
           </EffectComposer>
         </Suspense>
       </Canvas>
