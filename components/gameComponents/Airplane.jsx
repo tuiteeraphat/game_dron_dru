@@ -14,7 +14,6 @@ const delayedQuaternion = new Quaternion();
 
 export function Airplane(props) {
   const { nodes, materials } = useGLTF("models/airplane.glb");
-  console.log(nodes);
   const groupRef = useRef();
 
   useFrame(({ camera }) => {
