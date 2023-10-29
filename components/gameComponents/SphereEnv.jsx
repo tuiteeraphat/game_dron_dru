@@ -13,8 +13,10 @@ export default function SphereEnv() {
   const [randomIndex, setRandomIndex] = useState(0);
 
   useEffect(() => {
-    const newIndex = Math.floor(Math.random() * envTextures.length);
-    setRandomIndex(newIndex);
+    setInterval(() => {
+      const newIndex = Math.floor(Math.random() * envTextures.length);
+      setRandomIndex(newIndex);
+    }, 60000);
   }, []);
 
   const map = useTexture(`../../textures/${envTextures[randomIndex]}`);
