@@ -4,8 +4,8 @@ const gameSlice = createSlice({
   name: "game",
   initialState: {
     playerId: "",
-    time_practice: 5,
-    time_real: 15,
+    time_practice: 25,
+    time_real: 60,
     is_practice: true,
     is_real: false,
     is_real_end: false,
