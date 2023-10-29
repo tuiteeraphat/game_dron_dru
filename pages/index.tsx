@@ -19,8 +19,38 @@ import SphereEnv from "@/components/gameComponents/SphereEnv";
 import { Airplane } from "@/components/gameComponents/Airplane";
 import { Targets } from "@/components/gameComponents/Targets";
 import { MotionBlur } from "@/components/gameComponents/MotionBlur";
+import { practiceCountdown, realCountdown } from "../store/gameReducer";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
 
 export default function Home() {
+  const dispatch = useDispatch();
+  const gameData = useSelector((state: any) => state.game);
+
+  useEffect(() => {
+    if (gameData.is_practice) {
+      const interval = setInterval(() => {
+        dispatch(practiceCountdown());
+      }, 1000);
+
+      return () => {
+        clearInterval(interval);
+      };
+    }
+  }, [dispatch, gameData.is_practice]);
+
+  useEffect(() => {
+    if (gameData.is_real && !gameData.is_real_end) {
+      const interval = setInterval(() => {
+        dispatch(realCountdown());
+      }, 1000);
+
+      return () => {
+        clearInterval(interval);
+      };
+    }
+  }, [dispatch, gameData.is_real, gameData.is_real_end]);
+
   return (
     <main className="w-screen h-screen relative flex flex-col items-center justify-between">
       {/* show player detail */}
