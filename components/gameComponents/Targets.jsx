@@ -17,7 +17,7 @@ const TARGET_RAD = 0.125;
 export function Targets() {
   const [targets, setTargets] = useState(() => {
     const arr = [];
-    for (let i = 0; i < 25; i++) {
+    for (let i = 0; i < 30; i++) {
       arr.push({
         center: randomPoint(new Vector3(4, 1, 4)).add(
           new Vector3(0, 2 + Math.random() * 2, 0)

@@ -28,8 +28,10 @@ export default function Landscape(props) {
         depthScale={0}
         minDepthThreshold={0}
         depthToBlurRatioBias={0.0025}
-        debug={0}
-        reflectorOffset={0.0}
+        debug={
+          0
+        } 
+        reflectorOffset={0.0} 
       />,
     ];
   }, []);

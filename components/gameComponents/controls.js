@@ -75,7 +75,7 @@ function easeOutQuad(x) {
   
     let turboSpeed = easeOutQuad(turbo) * 0.02;
   
-    camera.fov = 55 + turboSpeed * 900;
+    camera.fov = 65 + turboSpeed * 800;
     camera.updateProjectionMatrix();
   
     planePosition.add(z.clone().multiplyScalar(-planeSpeed -turboSpeed));
