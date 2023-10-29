@@ -50,6 +50,15 @@ export default function Home() {
       {/* show player detail */}
       <GuiSetting />
       <CardDetailUser />
+      {!gameData.is_real && (
+        <div className="p-5 fixed flex flex-col text-white bottom-0 left-0 m-5 bg-gray-500/50 backdrop-blur-2xl rounded-2xl w-96 z-50">
+          <span>W - หันหน้าลง</span>
+          <span>A - หันหน้าซ้าย</span>
+          <span>S - หันหน้าขึ้น</span>
+          <span>D - หันหน้าขวา</span>
+          <span>Left Shift(ค้าง) - เร่งความเร็ว Turbo</span>
+        </div>
+      )}
 
       {/* main render game this */}
       <Canvas shadows>
@@ -59,13 +68,8 @@ export default function Home() {
           <PerspectiveCamera makeDefault position={[0, 10, 10]} />
           <OrbitControls target={[0, 0, 0]} />
 
-          {/* map load */}
           <Landscape />
-
-          {/* point or targets load */}
           {gameData.is_real && <Targets />}
-
-          {/* drone load */}
           <Airplane />
 
           <directionalLight

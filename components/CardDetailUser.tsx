@@ -28,10 +28,17 @@ export default function CardDetailUser() {
         )}
 
         {!gameData.is_practice && !gameData.is_real && gameData.is_real_end && (
-          <span className="text-white text-center">
-            เกมได้จบลงแล้วที่{" "}
-            <span className="font-bold">{gameData.score}</span> คะแนน
-          </span>
+          <>
+            <span className="text-white text-center">
+              เกมได้จบลงแล้วที่{" "}
+              <span className="font-bold">{gameData.score}</span> คะแนน
+            </span>
+            <span className="text-white text-center">
+              ท่านสามารถนำคะแนนที่ได้ไปแลกของรางวัล
+              <br />
+              ได้ที่บูธคณะคหกรรม
+            </span>
+          </>
         )}
       </div>
 
