@@ -3,7 +3,8 @@ import { Quaternion, TorusGeometry, Vector3 } from "three";
 import { mergeBufferGeometries } from "three-stdlib";
 import { useFrame } from "@react-three/fiber";
 import { planePosition } from "./Airplane";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { setMyTargets } from "@/store/gameReducer";
 
 function randomPoint(scale) {
   return new Vector3(
@@ -16,6 +17,9 @@ function randomPoint(scale) {
 const TARGET_RAD = 0.125;
 
 export function Targets() {
+  const dispatch = useDispatch();
+  const gameData = useSelector((state) => state.game);
+
   const [targets, setTargets] = useState(() => {
     const arr = [];
     for (let i = 0; i < 30; i++) {
@@ -61,7 +65,10 @@ export function Targets() {
 
       const hitDist = projected.distanceTo(target.center);
       if (hitDist < TARGET_RAD) {
-        target.hit = true;
+        if (gameData.is_real) {
+          target.hit = true;
+          dispatch(setMyTargets());
+        }
       }
     });
 

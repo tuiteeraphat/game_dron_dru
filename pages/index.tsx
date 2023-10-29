@@ -69,7 +69,7 @@ export default function Home() {
           <Landscape />
 
           {/* point or targets load */}
-          <Targets />
+          {gameData.is_real && <Targets />}
 
           {/* drone load */}
           <Airplane />
@@ -97,11 +97,11 @@ export default function Home() {
           <EffectComposer>
             {/* <Glitch /> */}
             <MotionBlur />
-            <HueSaturation
+            {/* <HueSaturation
               blendFunction={BlendFunction.NORMAL}
               hue={-0.15}
               saturation={0.1}
-            />
+            /> */}
           </EffectComposer>
         </Suspense>
       </Canvas>

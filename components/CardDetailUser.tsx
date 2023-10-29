@@ -2,7 +2,6 @@ import { useSelector } from "react-redux";
 
 export default function CardDetailUser() {
   const gameData = useSelector((state: any) => state.game);
-  console.log(gameData);
 
   return (
     <div className="top-5 right-5 fixed z-50">
@@ -52,7 +51,7 @@ export default function CardDetailUser() {
         <div className="flex justify-between">
           <span className="my-2">ห่วงทั้งหมด</span>
           <span className="my-2">
-            {gameData.totalTargets} / {gameData.score}
+            {gameData.myTargets} / {gameData.totalTargets}
           </span>
         </div>
         <div className="flex justify-between">
