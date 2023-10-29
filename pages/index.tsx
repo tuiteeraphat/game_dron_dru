@@ -17,6 +17,7 @@ import GuiSetting from "@/components/gameComponents/GuiSetting";
 import Landscape from "@/components/gameComponents/Landscape";
 import SphereEnv from "@/components/gameComponents/SphereEnv";
 import { Airplane } from "@/components/gameComponents/Airplane";
+import { Targets } from "@/components/gameComponents/Targets";
 import { MotionBlur } from "@/components/gameComponents/MotionBlur";
 
 export default function Home() {
@@ -36,6 +37,9 @@ export default function Home() {
 
           {/* map load */}
           <Landscape />
+
+          {/* point or targets load */}
+          <Targets />
 
           {/* drone load */}
           <Airplane />
