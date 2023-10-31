@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 
 export default function CardDetailUser() {
   const gameData = useSelector((state: any) => state.game);
+  console.log(gameData);
 
   return (
     <div className="top-5 right-5 fixed z-50">
@@ -25,18 +26,38 @@ export default function CardDetailUser() {
           </span>
         )}
 
-        {!gameData.is_practice && !gameData.is_real && gameData.is_real_end && (
-          <>
-            <span className="text-white text-center">
-              รอบเกมได้จบลงแล้วที่{" "}
-              <span className="font-bold">{gameData.score}</span> คะแนน
-            </span>
-            <span className="text-white text-center">
-              ท่านสามารถเริ่มเล่นใหม่ได้ในระยะเวลา{" "}
-              <span className="font-bold">{gameData.time_end}</span> วินาที
-            </span>
-          </>
-        )}
+        {!gameData.is_practice &&
+          !gameData.is_real &&
+          gameData.is_real_end &&
+          gameData.round <= 3 && (
+            <>
+              <span className="text-white text-center">
+                รอบเกมได้จบลงแล้วที่{" "}
+                <span className="font-bold">{gameData.score}</span> คะแนน
+              </span>
+              <span className="text-white text-center">
+                ท่านสามารถเริ่มเล่นใหม่ได้ในระยะเวลา{" "}
+                <span className="font-bold">{gameData.time_end}</span> วินาที
+              </span>
+            </>
+          )}
+
+        {!gameData.is_practice &&
+          !gameData.is_real &&
+          gameData.is_real_end &&
+          gameData.round == 4 && (
+            <>
+              <span className="text-white text-center">
+                เกมได้จบลงแล้วที่ทั้งหมด{" "}
+                <span className="font-bold">{gameData.score}</span> คะแนน
+              </span>
+              <span className="text-white text-center">
+                ขอบคุณที่สนใจเข้าร่วมเล่นเกมกับเรา
+                <br />
+                คุณยังสามารถเล่นต่อได้ในโหมดฝึกหัด
+              </span>
+            </>
+          )}
       </div>
 
       <div className="w-[400px] py-2 px-5 flex flex-col justify-center bg-gray-500/50 backdrop-blur-2xl rounded-b-2xl shadow mb-5 text-white">

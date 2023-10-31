@@ -4,9 +4,9 @@ const gameSlice = createSlice({
   name: "game",
   initialState: {
     playerId: "",
-    time_practice: 60,
-    time_end: 60,
-    time_real: 60,
+    time_practice: 10,
+    time_end: 10,
+    time_real: 10,
     is_practice: true,
     is_real: false,
     is_real_end: false,
@@ -47,10 +47,10 @@ const gameSlice = createSlice({
         if (state.round <= 3) {
           state.is_real = false;
           state.is_real_end = true;
-          state.time_real = 60;
-          state.time_end = 30;
+          state.time_real = 10;
+          state.time_end = 5;
         } else {
-          state.is_real = true;
+          state.is_real = false;
           state.is_real_end = true;
           state.time_real = 0;
           state.time_end = 0;

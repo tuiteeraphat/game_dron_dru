@@ -38,23 +38,25 @@ export default function Home() {
   }, [dispatch, gameData.is_practice]);
 
   useEffect(() => {
-    if (gameData.is_real && !gameData.is_real_end) {
-      const interval = setInterval(() => {
-        dispatch(realCountdown());
-      }, 1000);
+    let interval;
 
-      return () => {
-        clearInterval(interval);
-      };
-    } else {
-      const interval = setInterval(() => {
-        dispatch(endCountdown());
-      }, 1000);
+    if (gameData.round <= 3) {
+      if (gameData.is_real && !gameData.is_real_end) {
+        interval = setInterval(() => {
+          dispatch(realCountdown());
+        }, 1000);
+      }
 
-      return () => {
-        clearInterval(interval);
-      };
+      if (!gameData.is_real && gameData.is_real_end) {
+        interval = setInterval(() => {
+          dispatch(endCountdown());
+        }, 1000);
+      }
     }
+
+    return () => {
+      clearInterval(interval);
+    };
   }, [dispatch, gameData.is_real, gameData.is_real_end]);
 
   return (
