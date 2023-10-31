@@ -13,7 +13,11 @@ import SphereEnv from "@/components/gameComponents/SphereEnv";
 import { Airplane } from "@/components/gameComponents/Airplane";
 import { Targets } from "@/components/gameComponents/Targets";
 import { MotionBlur } from "@/components/gameComponents/MotionBlur";
-import { practiceCountdown, realCountdown } from "../store/gameReducer";
+import {
+  practiceCountdown,
+  realCountdown,
+  endCountdown,
+} from "../store/gameReducer";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 
@@ -37,6 +41,14 @@ export default function Home() {
     if (gameData.is_real && !gameData.is_real_end) {
       const interval = setInterval(() => {
         dispatch(realCountdown());
+      }, 1000);
+
+      return () => {
+        clearInterval(interval);
+      };
+    } else {
+      const interval = setInterval(() => {
+        dispatch(endCountdown());
       }, 1000);
 
       return () => {

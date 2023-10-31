@@ -34,9 +34,8 @@ export default function CardDetailUser() {
               <span className="font-bold">{gameData.score}</span> คะแนน
             </span>
             <span className="text-white text-center">
-              ท่านสามารถนำคะแนนที่ได้ไปแลกของรางวัล
-              <br />
-              ได้ที่บูธคณะคหกรรม
+              ท่านสามารถเริ่มเล่นใหม่ได้ในระยะเวลา{" "}
+              <span className="font-bold">{gameData.time_end}</span> วินาที
             </span>
           </>
         )}
