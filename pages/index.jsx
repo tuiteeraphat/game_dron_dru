@@ -64,9 +64,9 @@ export default function Home() {
       {/* show player detail */}
       <GuiSetting />
       <CardDetailUser />
-      {!gameData.is_real && (
+      {!gameData.is_real && gameData.is_practice && (
         <div>
-          <div className="p-5 fixed flex flex-col text-white bottom-40 left-0 m-5 bg-gray-500/50 backdrop-blur-2xl rounded-2xl w-96 z-50">
+          <div className="p-5 fixed flex flex-col text-white bottom-40 left-0 m-5 bg-gray-500/50 backdrop-blur-2xl rounded-2xl w-[400px] z-50">
             <span>W - หันหน้าลง</span>
             <span>A - หันหน้าซ้าย</span>
             <span>S - หันหน้าขึ้น</span>
@@ -74,11 +74,11 @@ export default function Home() {
             <span>Left Shift(ค้าง) - เร่งความเร็ว Turbo</span>
           </div>
 
-          <div className="p-5 fixed flex flex-col text-white bottom-0 left-0 m-5 bg-gray-500/50 backdrop-blur-2xl rounded-2xl w-96 z-50">
+          <div className="p-5 fixed flex flex-col text-white bottom-0 left-0 m-5 bg-gray-500/50 backdrop-blur-2xl rounded-2xl w-[400px] z-50">
             <span>การแข่งขันจะแบ่งเป็น 3 รอบ</span>
-            <span>*รอบที่ 1 ห่วงทั้งหมด 25 ห่วงละ 5 คะแนน 60 วินาที</span>
-            <span>*รอบที่ 2 ห่วงทั้งหมด 15 ห่วงละ 10 คะแนน 30 วินาที</span>
-            <span>*รอบที่ 3 ห่วงทั้งหมด 5 ห่วงะ 15 คะแนน 15 วินาที</span>
+            <span>*รอบที่ 1 ห่วงทั้งหมด 25 ห่วงละ 5 คะแนนที่ 60 วินาที</span>
+            <span>*รอบที่ 2 ห่วงทั้งหมด 15 ห่วงละ 10 คะแนนที่ 45 วินาที</span>
+            <span>*รอบที่ 3 ห่วงทั้งหมด 5 ห่วงะ 15 คะแนนที่ 35 วินาที</span>
           </div>
         </div>
       )}

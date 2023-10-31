@@ -36,7 +36,7 @@ export default function CardDetailUser() {
                 <span className="font-bold">{gameData.score}</span> คะแนน
               </span>
               <span className="text-white text-center">
-                ท่านสามารถเริ่มเล่นใหม่ได้ในระยะเวลา{" "}
+                รอบถัดไปกำลังจะเริ่มในระยะเวลา{" "}
                 <span className="font-bold">{gameData.time_end}</span> วินาที
               </span>
             </>
@@ -54,7 +54,7 @@ export default function CardDetailUser() {
               <span className="text-white text-center">
                 ขอบคุณที่สนใจเข้าร่วมเล่นเกมกับเรา
                 <br />
-                คุณยังสามารถเล่นต่อได้ในโหมดฝึกหัด
+                คุณยังสามารถเล่นต่อได้ในโหมดอิสระ
               </span>
             </>
           )}
@@ -82,6 +82,11 @@ export default function CardDetailUser() {
         <div className="flex justify-between">
           <span className="my-2">คะแนน</span>
           <span className="my-2">{gameData.score}</span>
+        </div>
+        <div className="flex justify-center">
+          <button className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">
+            เริ่มเกมใหม่
+          </button>
         </div>
       </div>
 

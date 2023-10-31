@@ -19,10 +19,22 @@ const TARGET_RAD = 0.125;
 export function Targets() {
   const dispatch = useDispatch();
   const gameData = useSelector((state) => state.game);
+  let customTargets;
+  switch (gameData.round) {
+    case 1:
+      customTargets = 45;
+      break;
+    case 2:
+      customTargets = 30;
+      break;
+    case 3:
+      customTargets = 25;
+      break;
+  }
 
   const [targets, setTargets] = useState(() => {
     const arr = [];
-    for (let i = 0; i < 30; i++) {
+    for (let i = 0; i < customTargets; i++) {
       arr.push({
         center: randomPoint(new Vector3(4, 1, 4)).add(
           new Vector3(0, 2 + Math.random() * 2, 0)

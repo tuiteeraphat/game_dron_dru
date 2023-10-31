@@ -4,15 +4,15 @@ const gameSlice = createSlice({
   name: "game",
   initialState: {
     playerId: "",
-    time_practice: 10,
-    time_end: 10,
-    time_real: 10,
+    time_practice: 60,
+    time_end: 30,
+    time_real: 60,
     is_practice: true,
     is_real: false,
     is_real_end: false,
     round: 1,
     score: 0,
-    totalTargets: 30,
+    totalTargets: 45,
     myTargets: 0,
   },
   reducers: {
@@ -21,7 +21,18 @@ const gameSlice = createSlice({
     },
     setMyTargets: (state) => {
       state.myTargets += 1;
-      state.score += 5;
+
+      switch (state.round) {
+        case 1:
+          state.score += 5;
+          break;
+        case 2:
+          state.score += 10;
+          break;
+        case 3:
+          state.score += 15;
+          break;
+      }
     },
     practiceCountdown: (state) => {
       if (state.time_practice === 1) {
@@ -44,11 +55,19 @@ const gameSlice = createSlice({
       if (state.time_real === 1) {
         state.round += 1;
 
+        switch (state.round) {
+          case 2:
+            state.time_real = 45;
+            break;
+          case 3:
+            state.time_real += 35;
+            break;
+        }
+
         if (state.round <= 3) {
           state.is_real = false;
           state.is_real_end = true;
-          state.time_real = 10;
-          state.time_end = 5;
+          state.time_end = 30;
         } else {
           state.is_real = false;
           state.is_real_end = true;
