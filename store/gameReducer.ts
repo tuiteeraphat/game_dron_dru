@@ -10,6 +10,7 @@ const gameSlice = createSlice({
     is_practice: true,
     is_real: false,
     is_real_end: false,
+    round: 1,
     score: 0,
     totalTargets: 30,
     myTargets: 0,
@@ -41,10 +42,19 @@ const gameSlice = createSlice({
     },
     realCountdown: (state) => {
       if (state.time_real === 1) {
-        state.is_real = false;
-        state.is_real_end = true;
-        state.time_real = 60;
-        state.time_end = 60;
+        state.round += 1;
+
+        if (state.round <= 3) {
+          state.is_real = false;
+          state.is_real_end = true;
+          state.time_real = 60;
+          state.time_end = 30;
+        } else {
+          state.is_real = true;
+          state.is_real_end = true;
+          state.time_real = 0;
+          state.time_end = 0;
+        }
       }
 
       state.time_real -= 1;

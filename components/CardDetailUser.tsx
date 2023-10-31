@@ -18,19 +18,17 @@ export default function CardDetailUser() {
 
         {!gameData.is_practice && gameData.is_real && (
           <span className="text-white text-center">
-            เริ่มโหมดเก็บคะแนนจริงเริ่มแล้ว
+            รอบที่ {gameData.round} เริ่มโหมดเก็บคะแนนจริงเริ่มแล้ว
             <br />
-            ในระยะเวลา <span className="font-bold">
-              {gameData.time_real}
-            </span>{" "}
-            วินาที
+            จะหมดในระยะเวลา{" "}
+            <span className="font-bold">{gameData.time_real}</span> วินาที
           </span>
         )}
 
         {!gameData.is_practice && !gameData.is_real && gameData.is_real_end && (
           <>
             <span className="text-white text-center">
-              เกมได้จบลงแล้วที่{" "}
+              รอบเกมได้จบลงแล้วที่{" "}
               <span className="font-bold">{gameData.score}</span> คะแนน
             </span>
             <span className="text-white text-center">
