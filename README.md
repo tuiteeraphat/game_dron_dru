@@ -1,4 +1,4 @@
 โคลน project แล้วใช้คำสั่ง
-npm install เสร็จ
+npm install และ
 npm run dev เพื่อ start โหมดนักพัฒนา
-เข้า localhost:3000 ได้เลย
+เข้าเว็บ localhost:3000
